@@ -342,9 +342,6 @@ const DataTable = memo(({
                         ? <CellBase style={{ flex: '0 0 48px' }} />
                         : <TableColCheckbox />
                     )}
-                    {expandableRows && !expandableRowsHideExpander && (
-                      <TableColExpander />
-                    )}
                     {columnsMemo.map(column => (
                       <TableCol
                         key={column.id}
@@ -352,6 +349,9 @@ const DataTable = memo(({
                         sortIcon={sortIcon}
                       />
                     ))}
+                    {expandableRows && !expandableRowsHideExpander && (
+                      <TableColExpander />
+                    )}
                   </TableHeadRow>
                 </TableHead>
               )}

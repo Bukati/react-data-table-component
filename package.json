@@ -27,7 +27,7 @@
     "build:umd": "rollup -c rollup/rollup.config.umd.js",
     "build:cjs": "rollup -c rollup/rollup.config.cjs.js",
     "build:es": "rollup -c rollup/rollup.config.es.js",
-    "build": "yarn lint && rimraf dist/* && npm run build:dev && npm run build:cjs && npm run build:umd && npm run build:es",
+    "build": "rimraf dist/* && npm run build:dev && npm run build:cjs && npm run build:umd && npm run build:es",
     "start": "npm run build:dev -- -w",
     "test": "cross-env BABEL_ENV=test jest --passWithNoTests --verbose --coverage",
     "test:tdd": "cross-env BABEL_ENV=test jest --watch",

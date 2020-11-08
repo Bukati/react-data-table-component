@@ -131,9 +131,8 @@ const TableRow = memo(({
             rowIndex={rowIndex}
           />
         ))}
-      </TableRowStyle>
 
-      {expandableRows && !expandableRowsHideExpander && (
+        {expandableRows && !expandableRowsHideExpander && (
           <TableCellExpander
             expanded={expanded}
             row={row}
@@ -141,6 +140,8 @@ const TableRow = memo(({
             disabled={defaultExpanderDisabled}
           />
         )}
+
+      </TableRowStyle>
 
       {expandableRows && expanded && (
         <ExpanderRow

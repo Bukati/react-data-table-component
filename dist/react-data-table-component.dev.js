@@ -5119,11 +5119,6 @@ var TableRow = /*#__PURE__*/React.memo(function (_ref) {
     name: "select-row-".concat(row[keyField]),
     row: row,
     selected: selected
-  }), expandableRows && !expandableRowsHideExpander && /*#__PURE__*/React__default['default'].createElement(TableCellExpander, {
-    expanded: expanded,
-    row: row,
-    onRowExpandToggled: handleExpanded,
-    disabled: defaultExpanderDisabled
   }), columns.map(function (column) {
     return /*#__PURE__*/React__default['default'].createElement(TableCell, {
       id: "cell-".concat(column.id, "-").concat(row[keyField]),
@@ -5132,7 +5127,12 @@ var TableRow = /*#__PURE__*/React.memo(function (_ref) {
       row: row,
       rowIndex: rowIndex
     });
-  })), expandableRows && expanded && /*#__PURE__*/React__default['default'].createElement(ExpanderRow, {
+  })), expandableRows && !expandableRowsHideExpander && /*#__PURE__*/React__default['default'].createElement(TableCellExpander, {
+    expanded: expanded,
+    row: row,
+    onRowExpandToggled: handleExpanded,
+    disabled: defaultExpanderDisabled
+  }), expandableRows && expanded && /*#__PURE__*/React__default['default'].createElement(ExpanderRow, {
     key: "expander--".concat(row[keyField]),
     data: row,
     extendedRowStyle: inheritStyles
